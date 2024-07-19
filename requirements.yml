@@ -1,0 +1,5 @@
+---
+roles:
+  - name: example_role
+    src: git+https://github.com/your/repo.git  # Vulnerability: potential outdated or insecure role
+    version: v1.0.0  # Vulnerability: fixed version, might not include security updates

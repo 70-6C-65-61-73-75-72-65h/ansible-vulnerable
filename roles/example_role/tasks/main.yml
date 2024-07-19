@@ -1,0 +1,40 @@
+---
+- name: Install Apache
+  apt:
+    name: apache2
+    state: present
+    update_cache: no  # Insecure: not updating cache
+
+- name: Copy insecure file
+  copy:
+    src: insecure_file.txt
+    dest: /tmp/insecure_file.txt
+    mode: '0777'  # Insecure: world-writable file
+
+- name: Apply insecure template
+  template:
+    src: insecure_template.j2
+    dest: /etc/apache2/sites-available/000-default.conf
+    mode: '0644'
+
+- name: Expose hardcoded password
+  debug:
+    msg: "The password is supersecretpassword"  # Insecure: hardcoded password
+
+- name: Create a sensitive file with weak permissions
+  file:
+    path: /tmp/weak_file.txt
+    state: touch
+    mode: '0666'  # Insecure: weak file permissions
+
+- name: Allow root login via SSH
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^PermitRootLogin'
+    line: 'PermitRootLogin yes'  # Insecure: allowing root login via SSH
+
+- name: Open unnecessary ports
+  firewalld:
+    port: 8080/tcp
+    permanent: yes
+    state: enabled  # Insecure: exposing unnecessary ports

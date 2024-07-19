@@ -1,0 +1,6 @@
+---
+# Handlers (not particularly insecure, but an example structure)
+- name: restart apache
+  service:
+    name: apache2
+    state: restarted

@@ -1,0 +1,57 @@
+{
+	"kics_version": "v2.1.1",
+	"files_scanned": 4,
+	"lines_scanned": 56,
+	"files_parsed": 4,
+	"lines_parsed": 55,
+	"lines_ignored": 1,
+	"files_failed_to_scan": 0,
+	"queries_total": 285,
+	"queries_failed_to_execute": 0,
+	"queries_failed_to_compute_similarity_id": 0,
+	"scan_id": "console",
+	"severity_counters": {
+		"CRITICAL": 0,
+		"HIGH": 0,
+		"INFO": 0,
+		"LOW": 1,
+		"MEDIUM": 0,
+		"TRACE": 0
+	},
+	"total_counter": 1,
+	"total_bom_resources": 0,
+	"start": "2024-07-12T14:09:40.304529912Z",
+	"end": "2024-07-12T14:09:49.325757371Z",
+	"paths": [
+		"/path"
+	],
+	"queries": [
+		{
+			"query_name": "Logging of Sensitive Data",
+			"query_id": "c6473dae-8477-4119-88b7-b909b435ce7b",
+			"query_url": "https://docs.ansible.com/ansible/latest/reference_appendices/logging.html#protecting-sensitive-data-with-no-log",
+			"severity": "LOW",
+			"platform": "Ansible",
+			"cloud_provider": "COMMON",
+			"category": "Best Practices",
+			"experimental": false,
+			"description": "To keep sensitive values out of logs, tasks that expose them need to be marked defining 'no_log' and setting to True",
+			"description_id": "0eca35f3",
+			"files": [
+				{
+					"file_name": "../../path/ansible.cfg",
+					"similarity_id": "88f433d5f6a38c60258e564cce4d85ccb01dfbc20eaf36d7bb5ab04837624d70",
+					"line": 1,
+					"resource_type": "n/a",
+					"resource_name": "n/a",
+					"issue_type": "IncorrectValue",
+					"search_key": "defaults",
+					"search_line": -1,
+					"search_value": "",
+					"expected_value": "no_log should be defined and set to 'true'",
+					"actual_value": "no_log is not defined"
+				}
+			]
+		}
+	]
+}

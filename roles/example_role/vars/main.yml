@@ -1,0 +1,4 @@
+---
+# Variables (example with hardcoded credentials)
+db_user: root
+db_password: rootpassword  # Insecure: hardcoded credentials
