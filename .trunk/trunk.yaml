@@ -1,3 +1,0 @@
-linters:
-  - name: ansible-lint
-    enabled: true
